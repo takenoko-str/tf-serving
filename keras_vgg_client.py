@@ -30,7 +30,7 @@ def main():
     image_data = image_data / 255.
 
     request = predict_pb2.PredictRequest()
-    request.model_spec.name = "mnist"
+    request.model_spec.name = "imagenet"
     request.model_spec.signature_name = "predict"
     request.inputs["images"].CopyFrom(
         tf.contrib.util.make_tensor_proto(image_data, dtype="float32", shape=[1, 224, 224, 3]))
